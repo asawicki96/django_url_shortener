@@ -8,7 +8,7 @@ class ShortURLCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShortURL
         fields = ("short_url", "long_url", "alias")
-        read_only_fields = ("short_utl", "alias")
+        read_only_fields = ("alias",)
 
     def get_short_url(self, obj: ShortURL) -> str:
         return get_url_from_alias(obj.alias)
